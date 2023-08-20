@@ -102,14 +102,19 @@ function App() {
             </div>
 
             <div>
-                <div className={"mise"}>
-                    <button onClick={() => miser(1)}>miser1</button>
-                    <button onClick={() => miser(2)}>miser2</button>
-                    <button onClick={() => miser(5)}>miser5</button>
-                    <button onClick={() => miser(10)}>miser10</button>
-                    <span className={"mise-valeur"}>{mise}</span>
-                    <button onClick={() => cleaner()}>clean</button>
+
+                <div className={"center"}>
+                    <div className={"mise"}>
+                        <button onClick={() => miser(1)}>miser1</button>
+                        <button onClick={() => miser(2)}>miser2</button>
+                        <button onClick={() => miser(5)}>miser5</button>
+                        <button onClick={() => miser(10)}>miser10</button>
+                        <span className={"center"}>{mise}</span>
+                        <button onClick={() => cleaner()}>clean</button>
+                    </div>
                 </div>
+
+
                 <div>
                     <button onClick={() => miserSurRouge()}>Rouge ({miseRouge})</button>
                     <button onClick={() => miserSurNoir()}>Noir ({miseNoir})</button>
