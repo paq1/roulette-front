@@ -10,8 +10,8 @@ function App() {
     const [mise, setMise] = useState(0);
     const [compte, setCompte] = useState(20);
     const [resultat, setResultat] = useState(roue[0]);
-    // const [misePair, setMisePair] = useState(0);
-    // const [miseImpair, setMiseImpair] = useState(0);
+    const [misePair, setMisePair] = useState(0);
+    const [miseImpair, setMiseImpair] = useState(0);
     const [miseRouge, setMiseRouge] = useState(0);
     const [miseNoir, setMiseNoir] = useState(0);
     const [coup, setCoup] = useState(0);
@@ -46,6 +46,18 @@ function App() {
         }
     };
 
+    const miserSurPair = () => {
+        if (miseImpair === 0) {
+            miserSur(setMisePair, misePair);
+        }
+    };
+
+    const miserSurImpair = () => {
+        if (misePair === 0) {
+            miserSur(setMiseImpair, miseImpair);
+        }
+    };
+
     const tourner_roue = () => {
         const index = getRandom(37)
         const nouvelleValeur = roue[index];
@@ -56,10 +68,19 @@ function App() {
             // on gagne * 2
             setCompte(compte + miseNoir * 2);
         }
+
+        if (nouvelleValeur.valeur % 2 === 0 && misePair > 0) {
+            setCompte(compte + misePair * 2);
+        } else if (nouvelleValeur.valeur % 2 === 1 && miseImpair > 0) {
+            setCompte(compte + miseImpair * 2);
+        }
+
+        if (miseNoir > 0 || miseRouge > 0 || misePair > 0 || miseImpair > 0) setCoup(coup + 1);
         setMiseRouge(0);
         setMiseNoir(0);
+        setMisePair(0);
+        setMiseImpair(0);
         setResultat(nouvelleValeur);
-        setCoup(coup + 1);
     };
 
     return (
@@ -92,6 +113,10 @@ function App() {
                 <div>
                     <button onClick={() => miserSurRouge()}>Rouge ({miseRouge})</button>
                     <button onClick={() => miserSurNoir()}>Noir ({miseNoir})</button>
+                </div>
+                <div>
+                    <button onClick={() => miserSurPair()}>Pair ({misePair})</button>
+                    <button onClick={() => miserSurImpair()}>Impair ({miseImpair})</button>
                 </div>
             </div>
         </div>
