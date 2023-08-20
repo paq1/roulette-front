@@ -3,6 +3,7 @@ import './App.css';
 import {getRandom} from "./shared/utils/random";
 import {roue} from "./shared/roue";
 import {CouleurEnum} from "./shared/enum/couleur.enum";
+import {config} from "./config";
 
 function App() {
 
@@ -63,7 +64,7 @@ function App() {
 
     return (
         <div>
-            <span>Roulette</span>
+            <span>xxx {config.titre}</span>
 
             <div className={"hud"}>
                 <div className={"resultat"}>
