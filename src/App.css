@@ -1,3 +1,14 @@
+.titre {
+  /*background-color: red;*/
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 16px 0;
+  color: white;
+  font-size: 30px;
+  font-family: Calibri, serif;
+  /*width: 10px;*/
+}
+
 .resultat {
   display: flex;
   flex-direction: column;
@@ -26,4 +37,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+body {
+  background-color: green;
+}
+
+button {
+  color: aliceblue;
+  background-color: darkgreen;
+}
+
+.container-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -84,8 +84,8 @@ function App() {
     };
 
     return (
-        <div>
-            <span>xxx {config.titre}</span>
+        <div className={"container-game"}>
+            <span className={"titre"}>{config.titre}</span>
 
             <div className={"hud"}>
                 <div className={"resultat"}>
