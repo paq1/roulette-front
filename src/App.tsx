@@ -9,8 +9,8 @@ function App() {
     const [mise, setMise] = useState(0);
     const [compte, setCompte] = useState(20);
     const [resultat, setResultat] = useState(roue[0]);
-    const [misePair, setMisePair] = useState(0);
-    const [miseImpair, setMiseImpair] = useState(0);
+    // const [misePair, setMisePair] = useState(0);
+    // const [miseImpair, setMiseImpair] = useState(0);
     const [miseRouge, setMiseRouge] = useState(0);
     const [miseNoir, setMiseNoir] = useState(0);
     const [coup, setCoup] = useState(0);
